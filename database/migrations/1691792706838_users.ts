@@ -14,7 +14,7 @@ export default class extends BaseSchema {
       table.string('password').notNullable()
       table.string('role').notNullable()
 
-      table.integer('companyId').unsigned().references('users.id').onDelete('CASCADE')
+      table.integer('companyId').unsigned().references('companies.id').onDelete('CASCADE')
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */
