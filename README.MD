@@ -28,10 +28,15 @@ MSSQL_DB_NAME=lucid
 ```
 Feature status:
 ![Static Badge](https://img.shields.io/badge/Status-Feature%20request-darkmagenta?style=flat-square)  - Feature was request beyond the func. requirements
+
 ![Static Badge](https://img.shields.io/badge/Satus-Backlog-white?style=flat-square) - Feature to get started.
+
 ![Static Badge](https://img.shields.io/badge/Satus-Doing-yellow?style=flat-square) - Feature being developed, soon in repository.
+
 ![Static Badge](https://img.shields.io/badge/Satus-Done-darkgreen?style=flat-square) - Feature done and in repository.
+
 ![Static Badge](https://img.shields.io/badge/Satus-Ready-navy?style=flat-square) - Feature tested and runing in production.
+
 
 |Feature| Status | Branch |
 |--|--|--|
