@@ -9,6 +9,7 @@
   ],
   "compilerOptions": {
     "outDir": "build",
+    "experimentalDecorators": true,
     "rootDir": "./",
     "sourceMap": true,
     "paths": {

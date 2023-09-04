@@ -12,7 +12,7 @@ export default class Company extends BaseModel {
   @column({ columnName: 'bannerImage' })
   public bannerImage: string
 
-  @hasMany(() => User, { foreignKey: 'companyId' })
+  @hasMany(() => User)
   public users: HasMany<typeof User>
 
   @column.dateTime({ autoCreate: true })

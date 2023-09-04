@@ -22,15 +22,6 @@ export default class UsersController {
     return user
   }
 
-  public async verify({ request }: HttpContextContract) {
-    const { password, id } = request.body()
-
-    const user = await User.find(id)
-
-    if (user) return await Hash.verify(user.password, password)
-    else return null
-  }
-
   public async login({ request, response, auth }: HttpContextContract) {
     const { email, password } = request.body()
 

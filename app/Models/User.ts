@@ -30,10 +30,10 @@ export default class User extends BaseModel {
   @column()
   public role: string
 
-  @column()
+  @column({ columnName: 'companyId' })
   public companyId: number
 
-  @belongsTo(() => Company, { foreignKey: 'companyId' })
+  @belongsTo(() => Company)
   public company: BelongsTo<typeof Company>
 
   @manyToMany(() => Project, {

@@ -3,7 +3,7 @@ import Company from 'App/Models/Company'
 
 export default class CompaniesController {
   public async index({}: HttpContextContract) {
-    const companies = await Company.query().preload('users')
+    const companies = await Company.query()
 
     return companies
   }
