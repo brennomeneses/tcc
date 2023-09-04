@@ -21,8 +21,11 @@
 import Route from '@ioc:Adonis/Core/Route'
 
 Route.resource('/companies', 'CompaniesController')
-Route.group(() => {
-  Route.post('/', 'UsersController.store')
-  Route.get('/', 'UsersController.index').middleware('auth')
-  Route.post('/login', 'UsersController.login')
-}).prefix('/users')
+Route.resource('/projects', 'ProjectsController').middleware({
+  '*': ['auth'],
+})
+
+Route.resource('/users', 'UsersController').middleware({
+  index: ['auth'],
+})
+Route.post('/users/login', 'UsersController.login')

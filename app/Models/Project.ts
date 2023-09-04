@@ -15,7 +15,11 @@ export default class Project extends BaseModel {
   @column()
   public grade: string
 
-  @manyToMany(() => User)
+  @manyToMany(() => User, {
+    pivotTable: 'users_projects',
+    pivotForeignKey: 'projectId',
+    pivotRelatedForeignKey: 'userId',
+  })
   public users: ManyToMany<typeof User>
 
   @column.dateTime({ autoCreate: true })
