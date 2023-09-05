@@ -2,7 +2,7 @@
 This the introduction of our Final Paper Project, here you will find links such like the REST API docs, intructions to build and run, and finally, status of features, parsed by git branches.
 
 ## REST API Documentation
-You can find the full REST API doc in this link.
+You can find the full REST API doc in [this link.](documentation/README.MD)
 
 ## Instrutions to build:
 You must have Node.js at least in 16.04 LTS and NPM 9.1.3 and Yarn (Optional) 1.22.19
