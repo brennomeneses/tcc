@@ -2,12 +2,12 @@ import { DateTime } from 'luxon'
 import {
   BaseModel,
   BelongsTo,
-  HasOne,
   ManyToMany,
+  afterFind,
+  beforeFind,
   beforeSave,
   belongsTo,
   column,
-  hasOne,
   manyToMany,
 } from '@ioc:Adonis/Lucid/Orm'
 import Company from './Company'
@@ -35,6 +35,9 @@ export default class User extends BaseModel {
 
   @belongsTo(() => Company)
   public company: BelongsTo<typeof Company>
+
+  @belongsTo(() => Project)
+  public projectManaging: BelongsTo<typeof Project>
 
   @manyToMany(() => Project, {
     pivotTable: 'users_projects',
