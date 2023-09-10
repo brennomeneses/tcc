@@ -3,8 +3,6 @@ import {
   BaseModel,
   BelongsTo,
   ManyToMany,
-  afterFind,
-  beforeFind,
   beforeSave,
   belongsTo,
   column,
