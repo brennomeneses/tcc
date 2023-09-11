@@ -9,30 +9,30 @@ BaseURL: ``https://photoclub-03.azurewebsites.net/``
  <summary><code>POST</code> <code><b>/companies</b></code></summary>
 
 ##### Parameters
-> ```json 
-> {
->	"name": "company name",
->	"bannerImage": "placeholder"
->}
-> ```
+```json 
+{
+	"name": "company name",
+	"bannerImage": "placeholder"
+}
+ ```
 
 
 ##### Responses
 
-> | http code     | content-type                      | response                                                            |
-> |---------------|-----------------------------------|---------------------------------------------------------------------|
-> | `201`         | `text/plain;charset=UTF-8`        | `Configuration created successfully`                                
-> | `405`         | `text/html;charset=utf-8`         | None                                                                |
+| http code     | content-type                      | response                                                            |
+|---------------|-----------------------------------|---------------------------------------------------------------------|
+| `201`         | `text/plain;charset=UTF-8`        | `Configuration created successfully`                                
+| `405`         | `text/html;charset=utf-8`         | None                                                                |
 
 ##### Example cURL
 
-> ```bash
->  curl -X POST https://photoclub-03.azurewebsites.net/companies -H "Content-Type: >application/json" --data-binary @- <<DATA
->{
->	"name": "empresa teste",
->	"bannerImage": "placeholder"
->}
-> ```
+```bash
+  curl -X POST https://photoclub-03.azurewebsites.net/companies -H "Content-Type: >application/json" --data-binary @- <<DATA
+{
+	"name": "empresa teste",
+	"bannerImage": "placeholder"
+}
+ ```
 
 </details>
 
@@ -53,9 +53,9 @@ BaseURL: ``https://photoclub-03.azurewebsites.net/``
 
 ##### Example cURL
 
-> ```bash
->  curl -X GET https://photoclub-03.azurewebsites.net/companies 
-> ```
+```bash
+  curl -X GET https://photoclub-03.azurewebsites.net/companies 
+ ```
 
 </details>
 
@@ -66,12 +66,12 @@ BaseURL: ``https://photoclub-03.azurewebsites.net/``
  <summary><code>POST</code> <code><b>/users/login</b></code></summary>
 
 ##### Parameters
->```json
->{
->	"email": "email@email.com",
->	"password": "password"
->}
->```
+```json
+{
+	"email": "email@email.com",
+	"password": "password"
+}
+```
 
 ##### Responses
 
@@ -84,17 +84,17 @@ BaseURL: ``https://photoclub-03.azurewebsites.net/``
 
 ##### Example cURL
 
-> ```bash
->  curl -X POST https://photoclub-03.azurewebsites.net/users -H "Content-Type:
->  application/json" --data-binary @- <<DATA
-> {
->	"email": "email@email.com",
->	"name": "Complete Name",
->	"role": "Gerente de Portfólio || Gerente de Projetos || Funcionário",
->	"password": "password",
->	"companyId": 0 
->}
-> ```
+ ```bash
+  curl -X POST https://photoclub-03.azurewebsites.net/users -H "Content-Type:
+  application/json" --data-binary @- <<DATA
+ {
+	"email": "email@email.com",
+	"name": "Complete Name",
+	"role": "Gerente de Portfólio || Gerente de Projetos || Funcionário",
+	"password": "password",
+	"companyId": 0 
+}
+ ```
 
 </details>
 
@@ -103,15 +103,15 @@ BaseURL: ``https://photoclub-03.azurewebsites.net/``
  <summary><code>POST</code> <code><b>/users</b></code></summary>
 
 ##### Parameters
->```json
->{
->	"email": "email@email.com",
->	"name": "Complete Name",
->	"role": "Gerente de Portfólio || Gerente de Projetos || Funcionário",
->	"password": "password",
->	"companyId": 0 
->}
->```
+```json
+{
+	"email": "email@email.com",
+	"name": "Complete Name",
+	"role": "Gerente de Portfólio || Gerente de Projetos || Funcionário",
+	"password": "password",
+	"companyId": 0 
+}
+```
 
 ##### Responses
 
@@ -122,16 +122,16 @@ BaseURL: ``https://photoclub-03.azurewebsites.net/``
 
 ##### Example cURL
 
-> ```bash
->  curl -X POST https://photoclub-03.azurewebsites.net/users -H "Content-Type:
->  application/json" --data-binary @- <<DATA
-> {
->	"email": "email@email.com",
->	"name": "Complete Name",
->	"role": "Gerente de Portfólio || Gerente de Projetos || Funcionário",
->	"password": "password",
->	"companyId": 0 
->}
-> ```
+```bash
+  curl -X POST https://photoclub-03.azurewebsites.net/users -H "Content-Type:
+  application/json" --data-binary @- <<DATA
+ {
+	"email": "email@email.com",
+	"name": "Complete Name",
+	"role": "Gerente de Portfólio || Gerente de Projetos || Funcionário",
+	"password": "password",
+	"companyId": 0 
+}
+ ```
 
 </details>
