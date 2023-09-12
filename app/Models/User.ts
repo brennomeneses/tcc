@@ -2,12 +2,10 @@ import { DateTime } from 'luxon'
 import {
   BaseModel,
   BelongsTo,
-  HasOne,
   ManyToMany,
   beforeSave,
   belongsTo,
   column,
-  hasOne,
   manyToMany,
 } from '@ioc:Adonis/Lucid/Orm'
 import Company from './Company'
