@@ -10,6 +10,12 @@ export default class extends BaseSchema {
       table.string('name')
       table.string('description')
       table.string('grade')
+      table.string('stackeholder')
+      table.string('price')
+      table.date('deadline')
+      table.json('dice')
+
+      table.integer('projectManagerId').unsigned().references('users.id')
 
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL

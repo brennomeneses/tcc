@@ -3,16 +3,21 @@ import Project from 'App/Models/Project'
 
 export default class ProjectsController {
   public async index({}: HttpContextContract) {
-    const projects = await Project.all()
+    const projects = await Project.query()
 
     return projects
   }
 
   public async store({ request }: HttpContextContract) {
-    const { name, description, grade, userIds } = request.body()
+    const { name, description, grade, userIds, stackeholder, price, deadline, dice } =
+      request.body()
 
     const project = await Project.create({
       name,
+      stackeholder,
+      price,
+      deadline,
+      dice,
       description,
       grade,
     })

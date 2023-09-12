@@ -34,6 +34,9 @@ export default class User extends BaseModel {
   @belongsTo(() => Company)
   public company: BelongsTo<typeof Company>
 
+  @belongsTo(() => Project)
+  public projectManaging: BelongsTo<typeof Project>
+
   @manyToMany(() => Project, {
     pivotTable: 'users_projects',
     pivotForeignKey: 'userId',

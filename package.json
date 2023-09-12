@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node ace serve --watch",
     "build": "node ace build --production",
-    "start": "node server.js",
+    "start": "NODE_ENV=production node build/server.js",
     "test": "node ace test",
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write ."
@@ -48,6 +48,7 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-adonis": "^2.1.1",
     "eslint-plugin-prettier": "^5.0.0",
+    "kuduscript": "^1.0.17",
     "pino-pretty": "^10.2.0",
     "prettier": "^3.0.1",
     "typescript": "~4.6",

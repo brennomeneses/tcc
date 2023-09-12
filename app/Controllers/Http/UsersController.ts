@@ -8,6 +8,12 @@ export default class UsersController {
     return users
   }
 
+  public async create({ auth }: HttpContextContract) {
+    const userData = auth.use('api').user
+
+    return userData
+  }
+
   public async store({ request }: HttpContextContract) {
     const { password, email, name, role, companyId } = request.body()
 
@@ -35,7 +41,7 @@ export default class UsersController {
 
       const token = await auth.use('api').generate(user)
 
-      return token
+      return { token, role: user.role }
     } catch (error) {
       console.log(error)
       return response.internalServerError('Internal Error')

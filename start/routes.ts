@@ -27,5 +27,6 @@ Route.resource('/projects', 'ProjectsController').middleware({
 
 Route.resource('/users', 'UsersController').middleware({
   index: ['auth'],
+  create: ['auth'],
 })
 Route.post('/users/login', 'UsersController.login')

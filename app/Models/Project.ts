@@ -1,5 +1,5 @@
 import { DateTime } from 'luxon'
-import { BaseModel, ManyToMany, column, manyToMany } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, HasOne, ManyToMany, column, hasOne, manyToMany } from '@ioc:Adonis/Lucid/Orm'
 import User from './User'
 
 export default class Project extends BaseModel {
@@ -13,7 +13,24 @@ export default class Project extends BaseModel {
   public description: string
 
   @column()
+  public stackeholder: string
+
+  @column()
+  public price: string
+
+  @column()
+  public deadline: Date
+
+  @column({
+    consume: (dice) => JSON.parse(dice),
+  })
+  public dice: string
+
+  @column()
   public grade: string
+
+  @hasOne(() => User, { foreignKey: 'projectManagerId' })
+  public projectManager: HasOne<typeof User>
 
   @manyToMany(() => User, {
     pivotTable: 'users_projects',
