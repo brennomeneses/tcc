@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon'
 import { BaseModel, HasMany, column, hasMany } from '@ioc:Adonis/Lucid/Orm'
 import User from './User'
+import Criterion from './Criterion'
 
 export default class Company extends BaseModel {
   @column({ isPrimary: true })
@@ -14,6 +15,9 @@ export default class Company extends BaseModel {
 
   @hasMany(() => User)
   public users: HasMany<typeof User>
+
+  @hasMany(() => Criterion)
+  public criteria: HasMany<typeof Criterion>
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

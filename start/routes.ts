@@ -25,6 +25,10 @@ Route.resource('/projects', 'ProjectsController').middleware({
   '*': ['auth'],
 })
 
+Route.resource('/criteria', 'CriteriaController').middleware({
+  '*': ['auth'],
+})
+
 Route.resource('/users', 'UsersController').middleware({
   index: ['auth'],
   create: ['auth'],
