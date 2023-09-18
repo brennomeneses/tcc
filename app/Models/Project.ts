@@ -1,6 +1,16 @@
 import { DateTime } from 'luxon'
-import { BaseModel, HasOne, ManyToMany, column, hasOne, manyToMany } from '@ioc:Adonis/Lucid/Orm'
+import {
+  BaseModel,
+  HasMany,
+  HasOne,
+  ManyToMany,
+  column,
+  hasMany,
+  hasOne,
+  manyToMany,
+} from '@ioc:Adonis/Lucid/Orm'
 import User from './User'
+import Effort from './Effort'
 
 export default class Project extends BaseModel {
   @column({ isPrimary: true })
@@ -31,6 +41,9 @@ export default class Project extends BaseModel {
 
   @hasOne(() => User, { foreignKey: 'projectManagerId' })
   public projectManager: HasOne<typeof User>
+
+  @hasMany(() => Effort)
+  public effort: HasMany<typeof Effort>
 
   @manyToMany(() => User, {
     pivotTable: 'users_projects',
