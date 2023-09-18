@@ -1,18 +1,7 @@
 import { DateTime } from 'luxon'
-import {
-  BaseModel,
-  BelongsTo,
-  HasMany,
-  HasManyThrough,
-  belongsTo,
-  column,
-  hasMany,
-  hasManyThrough,
-} from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, HasMany, belongsTo, column, hasMany } from '@ioc:Adonis/Lucid/Orm'
 import Company from './Company'
 import Effort from './Effort'
-import Project from './Project'
-
 export default class Criterion extends BaseModel {
   @column({ isPrimary: true })
   public id: number
