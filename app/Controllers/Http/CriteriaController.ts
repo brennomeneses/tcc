@@ -3,6 +3,16 @@ import Company from 'App/Models/Company'
 import Criterion from 'App/Models/Criterion'
 
 export default class CriteriaController {
+  public async index({ response, auth }: HttpContextContract) {
+    const { user } = auth.use('api')
+
+    if (!user?.companyId) return response.notFound('Company not found')
+
+    const criteria = await Criterion.query().where('companyId', user.companyId)
+
+    return criteria
+  }
+
   public async store({ request, auth, response }: HttpContextContract) {
     const { name, description, weight, zero, first, second, third, isBenefit } = request.body()
 
