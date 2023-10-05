@@ -3,9 +3,14 @@ import Effort from 'App/Models/Effort'
 import Project from 'App/Models/Project'
 
 export default class ProjectsController {
-  public async index({}: HttpContextContract) {
+  public async index({ auth, response }: HttpContextContract) {
+    const { user } = auth.use('api')
+
+    if (!user) return response.notFound('User not found')
+
     const projects = await Project.query()
       .preload('users')
+      .preload('projectManager')
       .preload('effort', (effort) => {
         effort.preload('criterion')
       })
@@ -13,7 +18,11 @@ export default class ProjectsController {
     return projects
   }
 
-  public async store({ request }: HttpContextContract) {
+  public async store({ request, auth, response }: HttpContextContract) {
+    const { user } = auth.use('api')
+
+    if (!user) return response.notFound('User not found')
+
     const { name, description, grade, userIds, stackeholder, price, deadline, dice, effort } =
       request.body()
 
@@ -25,6 +34,7 @@ export default class ProjectsController {
       dice,
       description,
       grade,
+      projectManagerId: user.id,
     })
 
     const criteria = await Effort.createMany(effort)

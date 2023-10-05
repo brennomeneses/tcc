@@ -39,7 +39,10 @@ export default class Project extends BaseModel {
   @column()
   public grade: string
 
-  @hasOne(() => User, { foreignKey: 'projectManagerId' })
+  @column({ columnName: 'projectManagerId' })
+  public projectManagerId: number
+
+  @hasOne(() => User, { foreignKey: 'id', localKey: 'projectManagerId' })
   public projectManager: HasOne<typeof User>
 
   @hasMany(() => Effort)
